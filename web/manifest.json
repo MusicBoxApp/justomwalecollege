@@ -1,6 +1,6 @@
 {
-    "name": "flutter_portfolio",
-    "short_name": "flutter_portfolio",
+    "name": "flutter_responsive_portfolio_webapp",
+    "short_name": "flutter_responsive_portfolio_webapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
