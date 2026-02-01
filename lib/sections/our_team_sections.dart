@@ -16,22 +16,22 @@ class OurTeamSection extends StatelessWidget {
       _TeamMember(
         name: 'Dr. John Banda',
         role: 'Vice Chancellor',
-        imageUrl: 'https://picsum.photos/300?1',
+        imagePath: 'assets/2.jpg',
       ),
       _TeamMember(
         name: 'Prof. Mary Phiri',
         role: 'Dean of Academics',
-        imageUrl: 'https://picsum.photos/300?2',
+        imagePath: 'assets/3.jpg',
       ),
       _TeamMember(
         name: 'Mr. David Mwila',
         role: 'Director of Programmes',
-        imageUrl: 'https://picsum.photos/300?3',
+        imagePath: 'assets/4.jpg',
       ),
       _TeamMember(
         name: 'Ms. Ruth Zulu',
         role: 'Student Affairs Officer',
-        imageUrl: 'https://picsum.photos/300?4',
+        imagePath: 'assets/1.jpg',
       ),
     ];
 
@@ -73,7 +73,7 @@ class OurTeamSection extends StatelessWidget {
 
                 final itemWidth = isDesktop
                     ? (constraints.maxWidth / 4) - 24
-                    : constraints.maxWidth / 2 - 16;
+                    : (constraints.maxWidth / 2) - 16;
 
                 return Wrap(
                   spacing: 24,
@@ -96,6 +96,7 @@ class OurTeamSection extends StatelessWidget {
     );
   }
 }
+
 class TeamMemberCard extends StatefulWidget {
   final _TeamMember member;
 
@@ -142,11 +143,18 @@ class _TeamMemberCardState extends State<TeamMemberCard> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                /// AVATAR
+                /// AVATAR (ASSET IMAGE)
                 CircleAvatar(
                   radius: 48,
-                  backgroundImage:
-                      NetworkImage(widget.member.imageUrl),
+                  backgroundColor: Colors.grey.shade200,
+                  child: ClipOval(
+                    child: Image.asset(
+                      widget.member.imagePath,
+                      width: 96,
+                      height: 96,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
 
                 const SizedBox(height: 16),
@@ -156,9 +164,8 @@ class _TeamMemberCardState extends State<TeamMemberCard> {
                   widget.member.name,
                   style: theme.textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: isDark
-                        ? Colors.white
-                        : Colors.black87,
+                    color:
+                        isDark ? Colors.white : Colors.black87,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -178,7 +185,7 @@ class _TeamMemberCardState extends State<TeamMemberCard> {
 
                 const SizedBox(height: 16),
 
-                /// SOCIAL ICONS (optional)
+                /// SOCIAL ICONS
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -197,14 +204,15 @@ class _TeamMemberCardState extends State<TeamMemberCard> {
     );
   }
 }
+
 class _TeamMember {
   final String name;
   final String role;
-  final String imageUrl;
+  final String imagePath;
 
   _TeamMember({
     required this.name,
     required this.role,
-    required this.imageUrl,
+    required this.imagePath,
   });
 }

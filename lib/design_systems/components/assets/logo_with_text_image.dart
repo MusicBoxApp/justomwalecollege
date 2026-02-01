@@ -5,6 +5,6 @@ class LogoWithTextImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/cwmall_logo_white.png', height: 32);
+    return Image.asset('assets/logo.jpg', height: 50);
   }
 }

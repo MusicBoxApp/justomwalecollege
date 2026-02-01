@@ -18,7 +18,7 @@ class GetAppSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      color: AppColors.primary600,
+      color: Colors.brown,
       child: MaxContainer(
         child: SizedBox(
           width: double.infinity,

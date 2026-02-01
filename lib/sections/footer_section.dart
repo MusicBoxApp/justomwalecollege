@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/design_systems/components/assets/app_store_image.dart';
 import 'package:flutter_portfolio/design_systems/components/assets/google_play_image.dart';
 import 'package:flutter_portfolio/design_systems/components/assets/logo_image.dart';
+import 'package:flutter_portfolio/design_systems/components/assets/logo_with_text_image.dart';
 import 'package:flutter_portfolio/design_systems/components/max_container.dart';
 import 'package:flutter_portfolio/design_systems/components/responsive_row_column.dart';
 import 'package:flutter_portfolio/design_systems/components/text_link_button.dart';
@@ -48,12 +49,12 @@ class _Information extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.only(left: 8),
-          child: LogoImage(),
+          child: LogoWithTextImage(),
         ),
         const SizedBox(height: 24),
         const Wrap(
           children: [
-            TextLinkButton.dark('Chewizzy Mall'),
+            TextLinkButton.dark('Justo Mwale College'),
             //TextLinkButton.dark('License'),
           ],
         ),
@@ -71,7 +72,7 @@ class _Information extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 8),
           child: Text(
-            '© 2025 All rights reserved',
+            '© 2026 All rights reserved',
             style: AppTextStyles.bodySmallRegular.copyWith(color: AppColors.neutral300),
           ),
         ),

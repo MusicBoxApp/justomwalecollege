@@ -12,11 +12,13 @@ class GallerySection extends StatelessWidget {
   Widget build(BuildContext context) {
     final breakpoint = BreakpointProvider.of(context);
 
-    // Replace with real images
-    final galleryImages = List.generate(
-      4,
-      (index) => 'https://picsum.photos/600/400?random=$index',
-    );
+    /// LOCAL ASSET IMAGES
+    final galleryImages = [
+      'assets/6.jpg',
+      'assets/7.jpg',
+      'assets/8.jpg',
+      'assets/9.jpg',
+    ];
 
     return Column(
       children: [
@@ -60,9 +62,9 @@ class GallerySection extends StatelessWidget {
                   return SizedBox(
                     width: 320,
                     child: GalleryImageCard(
-                      imageUrl: galleryImages[index],
+                      imagePath: galleryImages[index],
                       onTap: () {
-                        // TODO: open image viewer
+                        // TODO: open image viewer / dialog
                       },
                     ),
                   );
@@ -77,7 +79,7 @@ class GallerySection extends StatelessWidget {
         /// SEE MORE BUTTON
         TextButton.icon(
           onPressed: () {
-            // TODO: navigate to full gallery
+            // TODO: navigate to full gallery page
           },
           icon: const Icon(Boxicons.bxs_image),
           label: const Text('See more photos'),
@@ -92,13 +94,14 @@ class GallerySection extends StatelessWidget {
     );
   }
 }
+
 class GalleryImageCard extends StatefulWidget {
-  final String imageUrl;
+  final String imagePath;
   final VoidCallback onTap;
 
   const GalleryImageCard({
     super.key,
-    required this.imageUrl,
+    required this.imagePath,
     required this.onTap,
   });
 
@@ -123,12 +126,12 @@ class _GalleryImageCardState extends State<GalleryImageCard> {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              /// IMAGE
+              /// IMAGE (ASSET)
               AnimatedScale(
                 scale: _isHovered ? 1.05 : 1.0,
                 duration: const Duration(milliseconds: 300),
-                child: Image.network(
-                  widget.imageUrl,
+                child: Image.asset(
+                  widget.imagePath,
                   fit: BoxFit.cover,
                 ),
               ),

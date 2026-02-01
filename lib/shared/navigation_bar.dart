@@ -149,7 +149,7 @@ class _Navbar extends StatelessWidget {
     final showBarsIcon = breakpoint.smallerOrEqualToTablet;
 
     return ColoredBox(
-      color: isColorTransparent ? Colors.transparent : AppColors.primary700,
+      color: isColorTransparent ? Colors.transparent : Colors.brown,
       child: MaxContainer(
         child: SizedBox(
           height: Constants.kNavigationBarHeight,
@@ -199,7 +199,7 @@ class _Navigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const navigation = ['Home', 'Services', 'Contact'];
+    const navigation = ['Home', 'Gallery','Applications','Our Team', 'Contact'];
     final breakpoint = BreakpointProvider.of(context);
 
     EdgeInsets padding = const EdgeInsets.symmetric(horizontal: Constants.paddingContainer - 12);

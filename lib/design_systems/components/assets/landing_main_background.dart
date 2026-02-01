@@ -8,7 +8,7 @@ class LandingMainBackground extends StatelessWidget {
     final height = MediaQuery.sizeOf(context).height;
 
     return Image.asset(
-      'assets/landing_main_background.png',
+      'assets/5.jpg',
       width: double.infinity,
       fit: BoxFit.cover,
       height: height,
