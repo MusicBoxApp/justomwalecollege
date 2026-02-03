@@ -137,25 +137,28 @@ class IconInfoCard extends StatelessWidget {
 
             // ✅ Title (always visible)
             Text(
-              title,
-              style: theme.textTheme.titleSmall?.copyWith(
-                color: isDark ? Colors.white : Colors.black87,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
-            ),
+  title,
+  style: theme.textTheme.titleSmall?.copyWith(
+    fontSize: 16, // 👈 title size
+    color: isDark ? Colors.white : Colors.black87,
+    fontWeight: FontWeight.w600,
+  ),
+  textAlign: TextAlign.center,
+),
 
-            const SizedBox(height: 8),
+const SizedBox(height: 8),
 
-            // ✅ Subtitle (soft but readable)
-            Text(
-              subtitle,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: isDark ? Colors.white70 : Colors.black54,
-                height: 1.4,
-              ),
-              textAlign: TextAlign.center,
-            ),
+// ✅ Subtitle (soft but readable)
+Text(
+  subtitle,
+  style: theme.textTheme.bodySmall?.copyWith(
+    fontSize: 13, // 👈 subtitle size
+    color: isDark ? Colors.white70 : Colors.black54,
+    height: 1.4,
+  ),
+  textAlign: TextAlign.center,
+),
+
           ],
         ),
       ),
