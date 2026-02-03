@@ -26,8 +26,8 @@ class GetAppSection extends StatelessWidget {
             layout: breakpoint.getRowTypeWhenLargerOrEqualTo(Breakpoint.laptop),
             rowSpacing: 32,
             children: const [
-              ResponsiveRowColumnItem(rowFit: FlexFit.tight, child: _Description()),
-              ResponsiveRowColumnItem(rowFit: FlexFit.tight, child: _Screenshots()),
+             ResponsiveRowColumnItem(rowFit: FlexFit.tight, child: _Description()),
+            //  ResponsiveRowColumnItem(rowFit: FlexFit.tight, child: _Screenshots()),
             ],
           ),
         ),
